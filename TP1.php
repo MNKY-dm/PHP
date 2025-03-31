@@ -91,7 +91,9 @@ function searchTitanic(){
             </li>
             <li>
                 <label for="embarkment">
+                    Le port dans lequel la personne a été embarquée : 
                     <select name="embarkment" id="embarkment">
+                        <option value="null">Port d'embarquement</option>
                         <option value="S">Southampton</option>
                         <option value="Q">Quechua</option>
                         <option value="C">Château</option>
@@ -99,13 +101,26 @@ function searchTitanic(){
                 </label>
             </li>
             <li>
-                <label for="gender">
-                    <input type="text" placeholder="Genre" id="gender">
+                <label for="cabin">
+                    Entrez le numéro de la cabine de la personne : 
+                    <input type="text" placeholder="Numéro de la cabine" id="cabin">
                 </label>
             </li>
             <li>
-                <label for="gender">
-                    <input type="text" placeholder="Genre" id="gender">
+                <label for="sibsp">
+                    Nombre de frères/soeurs que la personne a et s'il a un/une conjoint(e) : 
+                    <input type="text" placeholder="Nombre de frères/soeurs et conjoint(e)" id="sibsp">
+                </label>
+            </li>
+            <li>
+                <label for="child">
+                    Nombre d'enfants que la personne a : 
+                    <input type="text" placeholder="Nombre d'enfants" id="child">
+                </label>
+            </li>
+            <li>
+                <label for="submit">
+                    <input type="submit" id="submit" value="Rechercher">
                 </label>
             </li>
         </ul>
