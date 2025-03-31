@@ -13,25 +13,37 @@
 echo searchTitanic();
 function searchTitanic(){
     $file = fopen("titanic.csv","r");
-
     while(($data = fgetcsv($file)) !== FALSE) {
-        if(($data[3] === 'female') && 
-        ($data[5] >= 18) && 
-        ($data[2] === 1) &&
-        ($data[11] === 'S') &&
-        ($data[10][0] === 'D') &&
-        ($data[6] === 1) &&
-        ($data[7] === 1)){
-            fclose($file);
-            return $data[4];
+        $correspond = 0;
+        if($data[4] === 'female') {
+            $correspond++;
+            if ($data[5] >= "18") {
+                $correspond++;
+                if ($data[2] === "1") {
+                    $correspond++;
+                    if ($data[11] === 'S') {
+                        $correspond++;
+                        if (str_contains($data[10], 'D')) {
+                            $correspond++;
+                            if ($data[6] === "1") {
+                                $correspond++;
+                                if ($data[7] === "1"){
+                                    $correspond++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-        else {
+        if ($correspond === 7) {
             fclose($file);
-            return "Passagère introuvable";
+            return $data[0];
         }
     }
+    fclose($file);
 
-};
+    };
 
 
 
