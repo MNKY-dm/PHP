@@ -10,8 +10,30 @@
 // — avec un enfant (parch)
 // Fichier : tp.remidurand.com/tp2/exo4/titanic.csv
 
-// echo searchTitanic($csv);
-// searchTitanic($csv){
+echo searchTitanic();
+function searchTitanic(){
+    $file = fopen("titanic.csv","r");
 
-// }
-echo "Titanic";
+    while(($data = fgetcsv($file)) !== FALSE) {
+        if(($data[3] === 'female') && 
+        ($data[5] >= 18) && 
+        ($data[2] === 1) &&
+        ($data[11] === 'S') &&
+        ($data[10][0] === 'D') &&
+        ($data[6] === 1) &&
+        ($data[7] === 1)){
+            fclose($file);
+            return $data[4];
+        }
+        else {
+            fclose($file);
+            return "Passagère introuvable";
+        }
+    }
+
+};
+
+
+
+
+?>
