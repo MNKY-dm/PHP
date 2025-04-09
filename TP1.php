@@ -48,12 +48,12 @@ function searchTitanic(){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titanic</title>
-</head>
-<body>
+    </head>
+    <body>
     <form action="TP1.php" method="get">
         <ul>
             <li>
@@ -125,5 +125,5 @@ function searchTitanic(){
             </li>
         </ul>
     </form>
-</body>
+    </body>
 </html>
